@@ -1,0 +1,24 @@
+{
+  "name": "burger-shop",
+  "version": "1.0.0",
+  "description": "Uses Node/Express/Handlebars to deliver a full-stack application to the end user.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwilliamsIII/Burger-Shop.git"
+  },
+  "author": "rwilliamsIII",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rwilliamsIII/Burger-Shop/issues"
+  },
+  "homepage": "https://github.com/rwilliamsIII/Burger-Shop#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
