@@ -8,5 +8,6 @@ CREATE TABLE burgers
 (
     id INT AUTO_INCREMENT,
     burger_name VARCHAR(30) NOT NULL,
-    devoured BOOLEAN default 0
+    devoured BOOLEAN default 0,
+    PRIMARY KEY (id)
 );

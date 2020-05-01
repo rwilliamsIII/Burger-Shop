@@ -12,7 +12,7 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
@@ -28,3 +28,13 @@ connection.connect(function(err) {
   
     console.log("connected as id " + connection.threadId);
   });
+
+app.get("/", function(req, res) {
+    connection.query("SELECT * FROM burgers;", function(err, data) {
+      if (err) {
+        return res.status(500).end();
+      }
+  
+      res.render("index", { burgers: data });
+    });
+});
