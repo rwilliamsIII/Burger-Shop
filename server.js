@@ -36,5 +36,18 @@ app.get("/", function(req, res) {
       }
   
       res.render("index", { burgers: data });
+      console.log("Works");
     });
 });
+
+
+
+
+
+
+
+
+app.listen(PORT, function() {
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
+  });
