@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use("/assets", express.static("./assets/"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -39,6 +40,21 @@ app.get("/", function(req, res) {
       console.log("Works");
     });
 });
+
+app.post("/api/burgers", function(req, res) {
+    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name], function(
+      err,
+      result
+    ) {
+      if (err) {
+        // If an error occurred, send a generic server failure
+        return res.status(500).end();
+      }
+  
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    });
+  });
 
 
 
