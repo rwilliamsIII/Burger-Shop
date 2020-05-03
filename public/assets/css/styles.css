@@ -1,0 +1,38 @@
+body{
+    background-color: navy;
+}
+.jumbotron{
+    background-color: gray;
+    margin: 50px;
+    border-style: solid;
+    border-color: white;
+}
+.display-4, .lead{
+    text-align: center;
+    color: black;
+}
+.jumboPic{
+    margin-left: 37%;
+}
+.createdBurger{
+    font-size: 24px;
+    color: white;
+}
+ul{
+    list-style-type: none;
+}
+.addedBurgers{
+    color: white;
+}
+.devourBurger{
+    padding: 10px;
+    background-color: white;
+    color: navy;
+}
+.form-group{
+    margin: 30px;
+}
+#addBurgerBtn{
+    background-color: white;
+    color: navy;
+}

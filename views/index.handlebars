@@ -1,16 +1,37 @@
-<h1>Welcome to the Burger Shop!</h1>
+<br>
+<br>
+<br>
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to the Burger Shop!</h1>
+  <p class="lead">Ready to eat some delicious burgers?</p>
+  <br>
+  <img class="jumboPic" src="./assets/images/burger-time.gif" alt="Burger Time">
+</div>
 
-<ul>
-    {{#each burgers}}
-    <li>
-        <p>
-            {{this.id}}. {{this.burger_name}}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+        <img src="./assets/images/new-burger.gif" alt="New Burger">
+        <p class="createdBurger">Created Burgers:</p>
+        <ul>
+            {{#each burgers}}
+            <li class="addedBurgers">
+                <p>
+                    {{this.id}}. {{this.burger_name}}
 
-            <button data-burgerid="{{this.id}}" class="devourBurger">Devour</button>
-        </p>
-    </li>
-    {{/each}}
-</ul>
+                    <button data-burgerid="{{this.id}}" class="devourBurger">Devour</button>
+                </p>
+            </li>
+            {{/each}}
+        </ul>
+        </div>
+
+        <div class="col-lg-6">
+            <img src="./assets/images/devoured-burger.gif" alt="Devoured Burger">
+        </div>
+    </div>
+</div>
+
 
 <h2>Add a Burger you'd like to eat!</h2>
 <form>
