@@ -10,13 +10,13 @@ const dbConnect = mysql.createConnection({
     database: "burgers_db"
   });
   
-  connection.connect(function(err) {
+  dbConnect.connect(function(err) {
       if (err) {
         console.error("error connecting: " + err.stack);
         return;
       }
     
-      console.log("connected as id " + connection.threadId);
+      console.log("connected as id " + dbConnect.threadId);
     });
 
     module.exports = dbConnect;

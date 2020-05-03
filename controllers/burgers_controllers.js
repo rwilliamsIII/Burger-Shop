@@ -17,17 +17,10 @@ router.get("/", function(req, res) {
     });
 });
 
-app.post("/api/burgers", function(req, res) {
-    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name], function(
-      err,
-      result
-    ) {
-      if (err) {
-        // If an error occurred, send a generic server failure
-        return res.status(500).end();
-      }
-  
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
-    });
+router.post("/api/burgers", function(req, res) {
+    burger.create([
+        ["burger_name"], [req.body.burger_name], function(result) {
+        res.json({ id: result.insertId });
+    }
+    ]);
   });

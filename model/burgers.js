@@ -1,26 +1,17 @@
 const orm = require("../config/orm");
 
-$(function(){
-console.log("Ready!")
-
-$("#addBurgerBtn").on("click", function(event){
-    event.preventDefault();
-
-    let addedBurger = {
-        burger_name: $("#newBurger").val().trim()
-    };
-
-$.ajax("/api/burgers", {
-    type: "POST",
-    data: addedBurger
-  }).then(
-    function() {
-      console.log("Burger Added!");
-      // Reload the page to get the updated list
-      location.reload();
-    }
-  );
-});
+const burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res){
+      cb(res);
+    });
+  },
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res){
+      cb(res);
+    });
+  }
+};
 
 
 
@@ -31,7 +22,7 @@ $.ajax("/api/burgers", {
 
 
 
-});
+module.exports = burger;
 
 
 
