@@ -1,3 +1,7 @@
+const mysql = require("mysql");
+
+
+
 const dbConnect = mysql.createConnection({
     host: "localhost",
     port: 3306,

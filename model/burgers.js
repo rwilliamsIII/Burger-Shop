@@ -1,3 +1,5 @@
+const orm = require("../config/orm");
+
 $(function(){
 console.log("Ready!")
 
