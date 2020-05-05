@@ -9,15 +9,6 @@
     text-align: center;
     color: black;
 }
-.jumboPic{
-    margin-left: 37%;
-}
-.createdBurgerImg{
-    margin-left: 100px;
-}
-.devouredBurgerImg{
-    float: right;
-}
 .createdBurger{
     font-size: 24px;
     color: black;
@@ -29,14 +20,26 @@ ul{
     padding: 5px;
     color: black;
 }
-.devourBurger{
+.formBackground{
+    margin-left: 50px;
+    margin-right: 50px;
     background-color: red;
-    color: white;
+    border-radius: 15px;
+}
+.formHeader{
+    text-align: center;
+    color: black;
 }
 .form-group{
     margin: 30px;
 }
+.form-text, .text-muted{
+    text-align: center;
+    color: black;
+}
 #addBurgerBtn{
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: red;
+    border-style: solid;
+    border-color: black;
 }
