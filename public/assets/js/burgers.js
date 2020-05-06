@@ -2,7 +2,7 @@ $(function(){
 
     $("#addBurgerBtn").on("click", function(event){
       event.preventDefault();
-        let newBurger = {
+        var newBurger = {
             burger_name: $("#newBurger").val().trim()
         };
 
@@ -16,8 +16,28 @@ $(function(){
         });
     });
 
+    $(".devourBurger").on("click", function(event) {
+      event.preventDefault();
+
+        var id = $(this).data("id");
+        console.log(id);
+        var isDevoured = {
+            devoured: 1
+        };
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: isDevoured
+        })
+        .then(function(){
+            console.log("Burger Devoured!");
+            location.reload();
+        });
+        
+    });
 
 
 
 
-})
+
+});
