@@ -2,12 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const burger = require("../model/burger");
+const burger = require("../models/burger.js");
 
 
 
 router.get("/", function(req, res) {
-    burger.all(function(data){
+    burger.selectAll(function(data){
         const hbsObject = {
             burgers: data
         };
