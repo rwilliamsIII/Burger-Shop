@@ -1,4 +1,5 @@
 const express = require("express");
+const timeout = require("connect-timeout")
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,6 +20,13 @@ app.set("view engine", "handlebars");
 const routes = require("./controllers/burgers_controllers");
 
 app.use(routes);
+
+app.use(timeout(15000));
+app.use(haltOnTimeout);
+
+function haltOnTimeout(req, res, next) {
+  if (!req.timedout) next();
+}
 
 
 app.listen(PORT, function() {
