@@ -3,13 +3,19 @@ const mysql = require("mysql");
 
 
 
-const dbConnect = mysql.createConnection({
+const dbConnect;
+if(process.env.JAWSDB_URL){
+  dbConnect = mysql.createConnection(process.env.JAWSDB_URL);
+} else{
+  dbConnect = mysql.createConnection({
     host: process.env.HOST,
     port: process.env.PORT,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE
   });
+}
+
   
   dbConnect.connect(function(err) {
       if (err) {
